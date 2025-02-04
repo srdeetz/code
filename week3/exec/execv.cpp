@@ -10,7 +10,7 @@ using namespace std;
 int main()
 {
     char *file = "/usr/bin/echo";
-    char *const args[] = {"/usr/bin/echo", "Hello world!", NULL};
+    char *const args[] = {"/usr/bin/echo", "Factorial of a number!", NULL};
     execv(file, args);
     return 0;
 }

@@ -13,13 +13,5 @@ int main()
     cout << "=====BEFORE========" << endl;
     execvp(args[0], args);
     cout << "======AFTER========" << endl;
-
-    // e.g for the PA1 for the server
-    pid_t server_pid = fork();
-    if (server_pid == 0){ // In the child process (Server Image)
-        int buffer_size;
-        //char *args[] = {"./server", "-m", buffer_size};
-        execvp(args[0], args);
-    }
 }
 

@@ -15,7 +15,7 @@ void forkexample()
 	if (fork() == 0)
 		printf("Child has x = %d\n", ++x); // Child Increments x
 	else{
-		wait(&child_status);
+		//wait(&child_status);
 		printf("Parent has x = %d\n", --x); // Parent Decrements x
 		}
 }
@@ -24,3 +24,14 @@ int main()
 	forkexample();
 	return 0;
 }
+/* answers
+
+child has: 314
+parent has: 313
+
+child has: 314
+parent has:312
+
+
+*/
+
