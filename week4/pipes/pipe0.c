@@ -17,9 +17,7 @@ int main()
 	// opening of pipe using pipe(fd)
 	char buff[20];
 
-	// int descriptor_3 = open("hello.dat", MODE); The file descriptor is a unique identifier 
-
-	if (pipe(fd) == -1) // Sets fd[0], fd[1]
+	if (pipe(fd) == -1) // Sets fd[0], fd[1] - Creates a new pipe
 	{
 		perror("pipe"); // error in pipe
 		exit(1); // exit from the program

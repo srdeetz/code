@@ -34,7 +34,8 @@ int main(int argc, char* argv[]){
 		//parent wait for child - parent waits for the return value of the child
 		wait(NULL);
 	}else{
-		//child did not close the write end
+		//child did not close the write end ?
+		// Should we close the write end of the pipe for the child 
 		//child read from the pipe's read end until the pipe is empty
 		while(read(pipefds[0],buf,1)==1){
 			printf("CHILD read from pipe --%s\n",buf);

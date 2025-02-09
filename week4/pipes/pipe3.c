@@ -29,19 +29,21 @@ int main(int argc, char* argv[]){
 
   if (child_pid == 0)
   {
-    /* Child closes write end of p2c*/
+    // The child process reads from the parent first
+    /* Child closes write end of p2c - parent to child pipe*/
     close (p2cfd[1]);
-    /* Child closes read end of c2p */
+    /* Child closes read end of c2p - child to parent pipe */
     close (c2pfd[0]);
     bytes_read = read (p2cfd[0], buffer, 10);
     if (bytes_read <= 0)
     exit (0);
     printf ("Child received: '%s'\n", buffer);
 
+  // The child process writes to the parent
     /* Child sends response of "goodbye" */
     strncpy (buffer, "goodbye", sizeof (buffer));
     write (c2pfd[1], buffer, 10);
-    exit (0); // Here
+    exit (0); // Here the child is always exiting
   }
 
   /* Parent closes read end of p2c */

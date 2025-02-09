@@ -1,6 +1,13 @@
 /*
 Example: Creating a bash-like linkage between two processes
 Parent is acting like 'bash' interpreting the command line: $ ls | sort
+
+-------- PARENT PROCESS ---------------
+V                                   V
+V                                   V   
+V                                   V
+Child process: ls               Child process: sort
+
 */
 #include <stdio.h>
 #include <string.h>
@@ -43,6 +50,7 @@ int main(int argc, char *argv[])
         /* Trim off the trailing newline character */
         char *token = strtok(buffer, "\n");
         printf("'sort' process received '%s'\n", token);
+        // Execute the sort function to sort the list of all the directory content
         exit(0);
     }
 
@@ -57,6 +65,8 @@ int main(int argc, char *argv[])
 
         /* printf() now writes to the pipe instead of the screen */
         printf("ls: list of 313 labs\n");
+        // Comment the printf above and execute the ls command to print a list of all the content in the user's home directory
+   
         exit(0);
     }
     /* 'bash' parent closes both ends of the pipe within itself */
