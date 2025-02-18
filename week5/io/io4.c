@@ -12,7 +12,7 @@ int main (void)
 	char buf2[12];
 
 	// assume foobar.txt is already created
-	fd[0] = open("foobar.txt", O_RDWR);	// fp is at the zero	position
+	fd[0] = open("foobar.txt", O_RDWR);	// fp is at the zero position
 	fd[1] = open("foobar.txt", O_RDWR); // fp is at the zero position
 	
 	write(fd[0], buf1, strlen(buf1));		
