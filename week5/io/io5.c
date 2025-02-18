@@ -13,6 +13,7 @@ int main()
 	read(fd1, &c, 1);
 	read(fd1, &c, 1);
 	read(fd1, &c, 1);
+	// Moving the file pointer associated with fd1 by 3 positions
 	printf("c = %c\n", c);
 	exit(0);
 }

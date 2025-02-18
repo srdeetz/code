@@ -42,4 +42,17 @@ hello worldtines Day!
 At the second write:
 tines Day!
 
+fd 0:
+	-
+	-
+	-
+>	-   moved 12 Bytes in the file
+
+fd 1
+>	-
+	-
+	-
+	-   moved by 0
+
+lseek allows to move file pointer associated with a file descriptor
 */
