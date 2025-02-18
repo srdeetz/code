@@ -16,7 +16,7 @@ int main()
     fd = open("foo.txt", O_RDONLY);
     if (fd < 0)
     {
-        perror("r1");
+        //perror("r1");
         exit(1);
     }
 

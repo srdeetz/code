@@ -17,7 +17,7 @@ int main()
 	float denominator;
 	float quotient;
 
-   //int *ptr  = new int[100];
+   int *ptr  = new int[100];
 
   cout << "Enter the numerator: ";
   cin >> numerator;

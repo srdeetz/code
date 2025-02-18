@@ -7,13 +7,12 @@
 
 int main()
 {
-	char letter;
+	char c;
 	int fd1 = open("sample.txt", O_RDONLY, 0);
 	int fd2 = open("sample.txt", O_RDONLY, 0);
-	read(fd1, &letter, 1);
-	read(fd1, &letter, 1);
-	read(fd1, &letter, 1);
-	// Move the file pointer associated with fd1 by 3 position
-	printf("letter = %c\n", letter);
+	read(fd1, &c, 1);
+	printf("c = %c\n", c);
+	read(fd1, &c, 1);
+	printf("c = %c\n", c);
 	exit(0);
 }
