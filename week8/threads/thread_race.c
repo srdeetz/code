@@ -15,13 +15,15 @@ int order; // :(
 void* place_order(void* arg)
 {
 	unsigned long i = 0;
+	//mutex lock
 	order += 1; // this is a shared variable on t1 and t2
+	//mutex unlock
+
 
 	printf("\n Order #%d received\n", order);
 
 	// Wait for some time -- (delay)
-	for (i = 0; i < (0xFFFFFFFF); i++) 
-		;
+	for (i = 0; i < (0xFFFFFFFF); i++);
 		
 	printf("\n Order #%d is ready\n", order);
 
