@@ -26,6 +26,7 @@ void* place_order(void* arg)
 	printf("\n Order #%d is ready\n", order);
 
 	return NULL;
+
 }
 
 int main(void)

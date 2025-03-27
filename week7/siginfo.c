@@ -34,7 +34,7 @@ static void handler(int sig, siginfo_t *si, void *uap)
 
 int main(void)
 {
-  struct sigaction sa;
+  struct sigaction sa; // struct
   int pid;
 
   // Set the field for the sigaction struct
@@ -48,12 +48,12 @@ int main(void)
 // Create multiple child processes
 
 restart: // Label
-  switch(pid = fork()) {
+  switch(pid = fork()) { // Create a new child process
     case -1: return -1; // error
     case 0: /* children */
        sleep(2);// The child process ends after two seconds
        printf("Child process: PID = %d\n", getpid());
-       return execlp("./hello.sh", "nothing",NULL);
+       return execlp("./hello.sh", "nothing",NULL); // Execute a bash script
      default: /* parent */
        sleep(10);
        printf("**Parent process: PID = %d**\n\n", getpid());

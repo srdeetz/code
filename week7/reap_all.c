@@ -9,9 +9,6 @@ Example: Reaping child processes
 void do_something(int sig)
 {
     printf("SIGCHLD received: change in status of child.\n");
-    // Wait on any child process.
-    while (waitpid(-1, 0, 0) != -1) // Wait on any child
-        ;
 }
 
 int main()
