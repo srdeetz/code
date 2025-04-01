@@ -20,6 +20,9 @@ void *place_order(void *arg)
 
 	unsigned long i = 0;
 	order += 1;
+	// Release the mutex lock
+	pthread_mutex_unlock(&key);
+	
 	printf("\n Order #%d received\n", order);
 
 	// Delay: making coffee order ...
@@ -28,8 +31,7 @@ void *place_order(void *arg)
 
 	printf("\n Order #%d is ready\n", order);
 
-	// Release the mutex lock
-	pthread_mutex_unlock(&key);
+	
 
 	return NULL;
 }
